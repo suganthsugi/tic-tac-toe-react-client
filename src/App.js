@@ -14,7 +14,7 @@ function App() {
 
   const getProgress = ()=>{
     if(localStorage.getItem("gamecode")!==null){
-      axios.get(`http://127.0.0.1:5500/${localStorage.getItem("gamecode")}`)
+      axios.get(`https://tic-tac-toe-server-k4yp.onrender.com/${localStorage.getItem("gamecode")}`)
       .then((res)=>{
         const grid = res.data.data.game[0].grid;
         setArr(grid);
@@ -49,7 +49,7 @@ function App() {
   }, [gc]);
 
   const createNewGame = ()=>{
-    axios.get('http://127.0.0.1:5500/new')
+    axios.get('https://tic-tac-toe-server-k4yp.onrender.com/new')
     .then((res)=>{
       // console.log(res);
       const gc = res.data.data.gamecode;
@@ -65,7 +65,7 @@ function App() {
   }
 
   const joingame = ()=>{
-    axios.get('http://127.0.0.1:5500/new')
+    axios.get('https://tic-tac-toe-server-k4yp.onrender.com/new')
     .then((res)=>{
       // console.log(res);
       localStorage.setItem('gamecode', gc);
@@ -83,7 +83,7 @@ function App() {
     }
     var tarr=[...arr]
     tarr[x][y]=localStorage.getItem("val");
-    axios.post("http://127.0.0.1:5500/", 
+    axios.post("https://tic-tac-toe-server-k4yp.onrender.com/", 
     {
       gc:localStorage.getItem("gamecode"),
       x:x,
