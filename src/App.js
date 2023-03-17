@@ -28,12 +28,12 @@ function App() {
         }
         // console.log(res.data.data.turn);
         // console.log(res.data.data.turn, localStorage.getItem("val"));
-        if(res.data.data.turn===localStorage.getItem("val")){
-          setTurn(true);
-        }
-        else{
-          setTurn(false);
-        }
+        // if(res.data.data.turn===localStorage.getItem("val")){
+        //   setTurn(true);
+        // }
+        // else{
+        //   setTurn(false);
+        // }
         // console.log(grid);
       });
     }
@@ -70,7 +70,7 @@ function App() {
       // console.log(res);
       localStorage.setItem('gamecode', gc);
       localStorage.setItem('val', 'o');
-      setTurn(false);
+      setTurn(true);
     })
     .catch((err)=>{
       console.log(err);
