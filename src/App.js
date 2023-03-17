@@ -76,13 +76,14 @@ function App() {
       console.log(err);
     });
   }
-
+  
   const change = (x, y)=>{
     if(arr[x][y]!==""){
       return;
     }
     var tarr=[...arr]
     tarr[x][y]=localStorage.getItem("val");
+    setTurn(!turn)
     axios.post("https://tic-tac-toe-server-k4yp.onrender.com/", 
     {
       gc:localStorage.getItem("gamecode"),
@@ -99,7 +100,6 @@ function App() {
       // else{
       //   setTurn(false);
       // }
-      setTurn(!turn)
       if(res.data.data.winning!==null){
         console.log('won', res.data.data.turn==='x'?"y":'X');
         setWon(true);
