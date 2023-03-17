@@ -93,12 +93,13 @@ function App() {
     .then((res)=>{
       setArr(res.data.data.game.grid);
       // console.log(res);
-      if(res.data.data.val===localStorage.getItem("val")){
-        setTurn(true);
-      }
-      else{
-        setTurn(false);
-      }
+      // if(res.data.data.val===localStorage.getItem("val")){
+      //   setTurn(true);
+      // }
+      // else{
+      //   setTurn(false);
+      // }
+      setTurn(!turn)
       if(res.data.data.winning!==null){
         console.log('won', res.data.data.turn==='x'?"y":'X');
         setWon(true);
